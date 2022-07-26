@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<s:Envelope
+	xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+	<s:Body xmlns="http://www.iata.org/IATA/EDIST">
+		<AirShoppingRQ Version="16.1"
+			xmlns="http://www.iata.org/IATA/EDIST">
+			<Document>
+				<Name>AF</Name>
+			</Document>
+			<Party>
+				<Sender>
+					<TravelAgencySender>
+						<Name>Travel Test Co</Name>
+						<IATA_Number>00000136</IATA_Number>
+						<AgencyID>TSN111</AgencyID>
+					</TravelAgencySender>
+				</Sender>
+				<Participants>
+					<Participant>
+						<AggregatorParticipant SequenceNumber="123">
+							<Name>PisocoTest</Name>
+							<AggregatorID>00089810</AggregatorID>
+						</AggregatorParticipant>
+					</Participant>
+				</Participants>
+			</Party>
+			<Travelers>
+				<Traveler>
+					<AnonymousTraveler>
+						<PTC>ADT</PTC>
+					</AnonymousTraveler>
+				</Traveler>
+			</Travelers>
+			<CoreQuery>
+				<OriginDestinations>
+					<OriginDestination>
+						<Departure>
+							<AirportCode>#DEP#</AirportCode>
+							<Date>#FDATE#</Date>
+						</Departure>
+						<Arrival>
+							<AirportCode>#ARR#</AirportCode>
+						</Arrival>
+					</OriginDestination>
+				</OriginDestinations>
+			</CoreQuery>
+			<Preference>
+				<FarePreferences>
+					<Types>
+						<Type>
+							<Code>759</Code>
+						</Type>
+					</Types>
+				</FarePreferences>
+				<CabinPreferences>
+					<CabinType>
+						<Code>5</Code>
+					</CabinType>
+				</CabinPreferences>
+			</Preference>
+		</AirShoppingRQ>
+	</s:Body>
+</s:Envelope>

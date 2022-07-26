@@ -1,0 +1,47 @@
+<S:Envelope
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header />
+    <S:Body>
+        <OrderCancelRQ Version="IATA2017.2" xsi:schemaLocation="xmldsig-core-schema.xsd"
+			xmlns="http://www.iata.org/IATA/EDIST/2017.2"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Document>
+                <Name>HITIT NDC GATEWAY</Name>
+                <ReferenceVersion>1.0</ReferenceVersion>
+            </Document>
+            <Party>
+                <Sender>
+                    <TravelAgencySender>
+                        <Contacts>
+                            <Contact>
+                                <EmailContact>
+                                    <Address>craneNDC@flypgs.com</Address>
+                                </EmailContact>
+                            </Contact>
+                        </Contacts>
+                        <AgencyID>PC NDC</AgencyID>
+                        <AgentUser>
+                            <Name>NDCTEST</Name>
+                            <AgentUserID>NDCTEST</AgentUserID>
+                            <UserRole>ADMIN</UserRole>
+                        </AgentUser>
+                    </TravelAgencySender>
+                </Sender>
+            </Party>
+            <Parameters>
+                <Languages>
+                    <LanguageCode>TR</LanguageCode>
+                </Languages>
+                <CurrCodes>
+                    <FiledInCurrency>
+                        <CurrCode>TRY</CurrCode>
+                    </FiledInCurrency>
+                </CurrCodes>
+            </Parameters>
+            <Query>
+                <Order OrderID="#PNRNO#" Owner="PC"/>
+            </Query>
+        </OrderCancelRQ>
+    </S:Body>
+</S:Envelope>

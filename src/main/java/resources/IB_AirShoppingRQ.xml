@@ -1,0 +1,52 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header/>
+   <soapenv:Body>
+<AirShoppingRQ Version="2.0" PrimaryLangID="es" xmlns="http://www.iata.org/IATA/EDIST">
+	<PointOfSale>
+		<Location>
+			<CountryCode>ES</CountryCode>
+		</Location>
+	</PointOfSale>
+	<Document>
+		<ReferenceVersion>2.000</ReferenceVersion>
+	</Document>
+	<Party>
+		<Sender>
+			<TravelAgencySender>
+          	  <IATA_Number>1111222</IATA_Number>
+           		 <AgencyID>firstagency</AgencyID>
+            </TravelAgencySender>
+		</Sender>
+	</Party>
+	<Travelers>
+		<Traveler>
+			<AnonymousTraveler>
+				<PTC>ADT</PTC>
+			</AnonymousTraveler>
+		</Traveler>
+	</Travelers>
+	<CoreQuery>
+		<OriginDestinations>
+			<OriginDestination>
+				<Departure>
+					<AirportCode>MAD</AirportCode>
+					<Date>2018-08-20</Date>
+				</Departure>
+				<Arrival>
+					<AirportCode>BUE</AirportCode>
+				</Arrival>
+			</OriginDestination>
+		</OriginDestinations>
+	</CoreQuery>
+	<Preferences>
+		<Preference>
+			<FlightPreferences>
+				<Characteristic>
+					<NonStopPreferences PreferencesContext="maxStops">0</NonStopPreferences>
+				</Characteristic>
+			</FlightPreferences>
+		</Preference>
+	</Preferences>
+</AirShoppingRQ>
+   </soapenv:Body>
+</soapenv:Envelope>

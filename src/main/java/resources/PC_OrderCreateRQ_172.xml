@@ -1,0 +1,90 @@
+<S:Envelope
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header />
+    <S:Body>
+        <OrderCreateRQ Version="IATA2017.2" xsi:schemaLocation="xmldsig-core-schema.xsd"
+			xmlns="http://www.iata.org/IATA/EDIST/2017.2"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Document>
+                <Name>HITIT NDC GATEWAY</Name>
+                <ReferenceVersion>1.0</ReferenceVersion>
+            </Document>
+            <Party>
+                <Sender>
+                    <TravelAgencySender>
+                        <Contacts>
+                            <Contact>
+                                <EmailContact>
+                                    <Address>craneNDC@flypgs.com</Address>
+                                </EmailContact>
+                            </Contact>
+                        </Contacts>
+                        <AgencyID>PC NDC</AgencyID>
+                        <AgentUser>
+                            <Name>NDCTEST</Name>
+                            <AgentUserID>NDCTEST</AgentUserID>
+                            <UserRole>ADMIN</UserRole>
+                        </AgentUser>
+                    </TravelAgencySender>
+                </Sender>
+            </Party>
+            <Parameters>
+                <Languages>
+                    <LanguageCode>TR</LanguageCode>
+                </Languages>
+                <CurrCodes>
+                    <FiledInCurrency>
+                        <CurrCode>TRY</CurrCode>
+                    </FiledInCurrency>
+                </CurrCodes>
+            </Parameters>
+            <Query>
+                <Order>
+                 #OFFER#
+                </Order>
+                #PAYMENT#
+                <DataLists>
+                    <PassengerList>
+                      #TRAVELER#
+                    </PassengerList>
+                    <ContactList>
+			            <ContactInformation ContactID="pisoco-contact">
+			              <PostalAddress>
+			                <Street>Smart Office Değirmen sok Nida Kule Kozyatağı</Street>
+			                <PostalCode>34782</PostalCode>
+			                <CityName>istanbul</CityName>
+			                <CountryCode>TR</CountryCode>
+			              </PostalAddress>
+			              <ContactProvided>
+			                <EmailAddress>
+			                  <EmailAddressValue>ismail.kahraman@pisoco.com</EmailAddressValue>
+			                </EmailAddress>
+			              </ContactProvided>
+			              <ContactProvided>
+			                <Phone>
+			                  <Label>Home</Label>
+			                  <CountryDialingCode>90</CountryDialingCode>
+			                  <AreaCode>533</AreaCode>
+			                  <PhoneNumber>2423126</PhoneNumber>
+			                </Phone>
+			              </ContactProvided>
+			            </ContactInformation>
+                        #CONTACTPAYMENT#
+                    </ContactList>
+                    #BAGGAEALLOWANCE#
+                    <ServiceDefinitionList/>
+                </DataLists>
+                <Metadata>
+                    <Other>
+                        <OtherMetadata>
+                            <CurrencyMetadatas>
+                                <CurrencyMetadata MetadataKey="TRY"/>
+                            </CurrencyMetadatas>
+                        </OtherMetadata>
+                    </Other>
+                </Metadata>
+            </Query>
+        </OrderCreateRQ>
+    </S:Body>
+</S:Envelope>

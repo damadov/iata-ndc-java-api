@@ -1,0 +1,27 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://xml.amadeus.com/2010/06/Security_v1" 
+xmlns:link="http://wsdl.amadeus.com/2010/06/ws/Link_v1" xmlns:ses="http://xml.amadeus.com/2010/06/Session_v3" xmlns:ns="http://www.iata.org/IATA/2015/00/2018.1/AirShoppingRQ">
+   #SOAPHEADER#
+    <soapenv:Body>
+        <AirShoppingRQ xmlns="http://www.iata.org/IATA/2015/00/2018.1/AirShoppingRQ">
+            <PayloadAttributes>
+                <Version>18.1</Version>
+            </PayloadAttributes>
+            <Party>
+                <Sender>
+                    #TRAVELAGENCY#
+                </Sender>
+            </Party>
+            <Request>
+                <FlightRequest>
+                   #ORIGDEST#
+                </FlightRequest>
+                <Paxs>
+                   #TRAVELER#
+                </Paxs>
+                <ShoppingCriteria>
+                    #CRITERIA#
+                </ShoppingCriteria>
+            </Request>
+        </AirShoppingRQ>
+    </soapenv:Body>
+</soapenv:Envelope>

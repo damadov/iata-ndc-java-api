@@ -1,0 +1,48 @@
+<S:Envelope
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+	<SOAP-ENV:Header />
+	<S:Body>
+		<AirDocIssueRQ xsi:schemaLocation="xmldsig-core-schema.xsd" xmlns="http://www.iata.org/IATA/EDIST/2017.2"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="IATA2017.2">
+			 <Document>
+				<Name>HITIT NDC GATEWAY</Name>
+				<ReferenceVersion>1.0</ReferenceVersion>
+			</Document>
+			<Party>
+				<Sender>
+					<TravelAgencySender>
+						<Contacts>
+							<Contact>
+								<EmailContact>
+									<Address>craneNDC@flypgs.com</Address>
+								</EmailContact>
+							</Contact>
+						</Contacts>
+						<AgencyID>PC NDC</AgencyID>
+						<AgentUser>
+							<Name>NDCTEST</Name>
+							<AgentUserID>NDCTEST</AgentUserID>
+							<UserRole>ADMIN</UserRole>
+						</AgentUser>
+					</TravelAgencySender>
+				</Sender>
+			</Party>
+			<Query>
+				<TicketDocQuantity>#TKTCOUNT#</TicketDocQuantity>
+				<TicketDocInfo>
+					<PassengerReference>#PSGREF#</PassengerReference>
+					#PAYMENT#
+				</TicketDocInfo>
+				<TicketDocInfo>
+					<PassengerReference>#PSGREF#</PassengerReference>
+				</TicketDocInfo>
+				<DataLists>
+					<PassengerList>
+						#TRAVELER#
+					</PassengerList>
+				</DataLists>
+			</Query>
+		</AirDocIssueRQ>
+	</S:Body>
+</S:Envelope>

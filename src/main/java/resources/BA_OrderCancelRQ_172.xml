@@ -1,0 +1,44 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.iata.org/IATA/EDIST/2017.2">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <OrderCancelRQ Version="17.2" PrimaryLangID="EN" AltLangID="EN" xmlns="http://www.iata.org/IATA/EDIST/2017.2">
+         <Document>
+            <Name>#AIRLINECODE#</Name>
+         </Document>
+         <Party>
+        <Sender>
+          <TravelAgencySender>
+            <Type>Offline</Type>
+            <Contacts>
+              <Contact>
+                <AddressContact>
+                  <Street>TESTT ADDR1</Street>
+                  <Street>TESTT ADDR2</Street>
+                  <CityName>LON</CityName>
+                  <PostalCode>120000</PostalCode>
+                  <CountryCode>GB</CountryCode>
+                </AddressContact>
+                <EmailContact>
+                  <Address>ndc@ba.com</Address>
+                </EmailContact>
+              </Contact>
+            </Contacts>
+            <IATA_Number>00000136</IATA_Number>
+            <AgencyID>TSN111</AgencyID>
+          </TravelAgencySender>
+        </Sender>
+        <Participants>
+          <Participant>
+            <AggregatorParticipant SequenceNumber="1">
+              <Name>Trippep.com</Name>
+              <AggregatorID>00089810</AggregatorID>
+            </AggregatorParticipant>
+          </Participant>
+        </Participants>
+      </Party>
+         <Query>
+            <Order OrderID="#PNRNO#" Owner="#AIRLINECODE#"/>
+         </Query>
+      </OrderCancelRQ>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,76 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header />
+  <S:Body>
+    <OrderCreateRQ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="17.2" xmlns="http://www.iata.org/IATA/EDIST/2017.2">
+      <Document>
+        <Name>#AIRLINECODE#</Name>
+      </Document>
+       <Party>
+        <Sender>
+          <TravelAgencySender>
+            <Type>Offline</Type>
+            <Contacts>
+              <Contact>
+                <AddressContact>
+                  <Street>TESTT ADDR1</Street>
+                  <Street>TESTT ADDR2</Street>
+                  <CityName>LON</CityName>
+                  <PostalCode>120000</PostalCode>
+                  <CountryCode>GB</CountryCode>
+                </AddressContact>
+                <EmailContact>
+                  <Address>ndc@ba.com</Address>
+                </EmailContact>
+              </Contact>
+            </Contacts>
+            <IATA_Number>00000136</IATA_Number>
+            <AgencyID>TSN111</AgencyID>
+          </TravelAgencySender>
+        </Sender>
+        <Participants>
+          <Participant>
+            <AggregatorParticipant SequenceNumber="1">
+              <Name>Trippep.com</Name>
+              <AggregatorID>00089810</AggregatorID>
+            </AggregatorParticipant>
+          </Participant>
+        </Participants>
+      </Party>
+      <Query>
+        <Order>
+         #OFFER#
+        </Order>
+        #PAYMENT#
+        <DataLists>
+          <PassengerList>
+            #TRAVELER#
+          </PassengerList>
+          <ContactList>
+            <ContactInformation ContactID="pisoco-contact">
+              <PostalAddress>
+                <Street>Smart Office Değirmen sok Nida Kule Kozyatağı</Street>
+                <PostalCode>34782</PostalCode>
+                <CityName>istanbul</CityName>
+                <CountryCode>TR</CountryCode>
+              </PostalAddress>
+              <ContactProvided>
+                <EmailAddress>
+                  <EmailAddressValue>ismail.kahraman@pisoco.com</EmailAddressValue>
+                </EmailAddress>
+              </ContactProvided>
+              <ContactProvided>
+                <Phone>
+                  <Label>Home</Label>
+                  <CountryDialingCode>90</CountryDialingCode>
+                  <AreaCode>533</AreaCode>
+                  <PhoneNumber>2423126</PhoneNumber>
+                </Phone>
+              </ContactProvided>
+            </ContactInformation>
+            #CONTACTPAYMENT#
+          </ContactList>
+        </DataLists>
+      </Query>
+    </OrderCreateRQ>
+  </S:Body>
+</S:Envelope>

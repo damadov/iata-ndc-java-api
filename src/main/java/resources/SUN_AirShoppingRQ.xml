@@ -1,0 +1,72 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:edis="http://www.iata.org/IATA/EDIST">
+	<soapenv:Header />
+	<soapenv:Body>
+		<AirShoppingRQ
+			xsi:schemaLocation="https://iflyrestest.ibsgen.com:6012/iRes_NdcRes_WS/services/NdcResServiceSOAPPort?xsd=../../xsd/ndcres/AirShoppingRQ.xsd"
+			Version="" xmlns="http://www.iata.org/IATA/EDIST" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<PointOfSale>
+				<Location>
+					<CountryCode>DE</CountryCode>
+				</Location>
+			</PointOfSale>
+			<Document>
+				<Name>NDC</Name>
+				<ReferenceVersion>15.1.2</ReferenceVersion>
+			</Document>
+			<Party>
+				<Sender>
+					<AgentUserSender>
+						<AgentUserID>HKTHONUSR</AgentUserID>
+					</AgentUserSender>
+				</Sender>
+				<Recipient>
+					<ORA_Recipient>
+						<AirlineID>XQ</AirlineID>
+					</ORA_Recipient>
+				</Recipient>
+			</Party>
+			<Travelers>
+				<Traveler>
+					<AnonymousTraveler>
+						<PTC Quantity="1">ADT</PTC>
+					</AnonymousTraveler>
+				</Traveler>
+			</Travelers>
+			<CoreQuery>
+				<OriginDestinations>
+					<OriginDestination>
+						<Departure>
+							<AirportCode>ADA</AirportCode>
+							<Date>2018-08-22</Date>
+						</Departure>
+						<Arrival>
+							<AirportCode>AYT</AirportCode>
+						</Arrival>
+						<CalendarDates DaysAfter="0" DaysBefore="0" />
+					</OriginDestination>
+				</OriginDestinations>
+			</CoreQuery>
+			<Preferences>
+				18-May-17© IBS Software Services 2017 | Page No. 18P a g e|
+				18SunExpress –IBS NDC PlatformDEVELOPER’S GUIDE
+				<Preference>
+					<FarePreferences>
+						<Types>
+							<Type>
+								<Code>SunEco</Code>
+							</Type>
+						</Types>
+					</FarePreferences>
+				</Preference>
+				<Preference>
+					<TransferPreferences>
+						<Connection>
+							<MaxNumber>2</MaxNumber>
+						</Connection>
+					</TransferPreferences>
+				</Preference>
+			</Preferences>
+		</AirShoppingRQ>
+	</soapenv:Body>
+</soapenv:Envelope>

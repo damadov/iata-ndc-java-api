@@ -1,0 +1,65 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sec="http://xml.amadeus.com/2010/06/Security_v1" xmlns:link="http://wsdl.amadeus.com/2010/06/ws/Link_v1" xmlns:ses="http://xml.amadeus.com/2010/06/Session_v3" xmlns:ns="http://www.iata.org/IATA/2015/00/2018.1/AirShoppingRQ">
+    <soapenv:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+        <sec:AMA_SecurityHostedUser>
+            <sec:UserID POS_Type="1" RequestorType="U" PseudoCityCode="SYDSQ08NH" AgentDutyCode="SU">
+                <typ:RequestorID xmlns:typ="http://xml.amadeus.com/2010/06/Types_v1" xmlns:iat="http://www.iata.org/IATA/2007/00/IATA2010.1">
+                    <iat:CompanyName>#AIRLINECODE#</iat:CompanyName>
+                </typ:RequestorID>
+            </sec:UserID>
+        </sec:AMA_SecurityHostedUser>
+        <wsa:To>https://nodeA1.test.webservices.amadeus.com/1ASIWNDCSQ</wsa:To>
+        <wsa:Action>http://webservices.amadeus.com/NDC_AirShopping_18.1</wsa:Action>
+        <wsa:MessageID>5cdc6b1d9483</wsa:MessageID>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+            <wsse:Username>WSSQHHK</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">k9BXoW4miGvr3LHqdA/VVt6gSAg=</wsse:Password>
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">pTJk4kbyLuaavKTnEDdmaA==</wsse:Nonce>
+            <wsu:Created>2021-02-15T23:00:10.097Z</wsu:Created>
+         </wsse:UsernameToken>
+        </wsse:Security>
+    </soapenv:Header>
+    <soapenv:Body>
+        <AirShoppingRQ xmlns="http://www.iata.org/IATA/2015/00/2018.1/AirShoppingRQ">
+            <PayloadAttributes>
+                <Version>18.1</Version>
+            </PayloadAttributes>
+            <Party>
+                <Sender>
+                    <TravelAgency>
+                        <AgencyID>SINSQ08NE</AgencyID>
+                        <IATA_Number>12345678</IATA_Number>
+                    </TravelAgency>
+                </Sender>
+            </Party>
+            <Request>
+                <FlightRequest>
+                    <OriginDestRequest>
+                        <OriginDepRequest>
+                            <IATA_LocationCode>DEL</IATA_LocationCode>
+                            <Date>2021-06-08</Date>
+                        </OriginDepRequest>
+                        <DestArrivalRequest>
+                            <IATA_LocationCode>SIN</IATA_LocationCode>
+                        </DestArrivalRequest>
+                    </OriginDestRequest>
+                </FlightRequest>
+                <Paxs>
+                    <Pax>
+                        <PaxID>PAX1</PaxID>
+                        <PTC>ADT</PTC>
+                    </Pax>
+                    <Pax>
+                        <PaxID>PAX11</PaxID>
+                        <PTC>INF</PTC>
+                    </Pax>
+                </Paxs>
+                <ShoppingCriteria>
+                    <CabinTypeCriteria>
+                        <CabinTypeName>ECO</CabinTypeName>
+                    </CabinTypeCriteria>
+                </ShoppingCriteria>
+            </Request>
+        </AirShoppingRQ>
+    </soapenv:Body>
+</soapenv:Envelope>
