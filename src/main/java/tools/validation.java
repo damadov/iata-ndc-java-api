@@ -98,7 +98,7 @@ public class validation {
 			    return Period.between(birthDate, currentDate).getYears();
 			}
 	
-	@SuppressWarnings("unused")
+	//@SuppressWarnings("unused")
 	public static int random(int min, int max) {
 		
 		Random r = new Random();

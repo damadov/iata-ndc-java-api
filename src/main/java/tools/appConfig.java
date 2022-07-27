@@ -16,7 +16,7 @@ public class appConfig {
 	public static String defaultCurr = "TRY";
 	public static String postgreTimeZone = "Europe/Istanbul";
 	
-	//DEV->
+	//DEV-> Set your own credentials fot related parameters
 	public static String webUrl = "<your_web_url>";
 //	public static String postgredb = "<your_db_ip>"; 
 //	public static String postgrepwd = "<your_db_pwd>"; 
